@@ -1,0 +1,27 @@
+{
+  "name": "notebook-app2",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@types/jest": "26.0.10",
+    "@types/node": "14.6.0",
+    "@types/react": "16.9.47",
+    "@types/react-dom": "16.9.8",
+    "axios": "^0.20.0",
+    "keycloak-js": "^11.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-quill": "^1.3.5",
+    "react-scripts": "0.9.5",
+    "typescript": "4.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

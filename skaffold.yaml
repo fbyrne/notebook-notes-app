@@ -1,0 +1,18 @@
+apiVersion: skaffold/v2beta6
+kind: Config
+metadata:
+  name: note-app
+
+profiles:
+  - name: dev
+    build:
+      artifacts:
+        - image: notebook/note-app
+          docker:
+            dockerfile: Dockerfile.dev
+  - name: prod
+    build:
+      artifacts:
+        - image: notebook/note-app
+          docker:
+            dockerfile: Dockerfile.prod
