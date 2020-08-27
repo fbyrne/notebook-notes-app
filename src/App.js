@@ -7,8 +7,6 @@ import Keycloak from 'keycloak-js';
 
 import { withStyles } from '@material-ui/core/styles';
 
-import {Accordion, AccordionSummary, AccordionDetails} from '@material-ui/core';
-
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -22,7 +20,10 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import {MenuIcon, NoteIcon, ExpandMoreIcon} from '@material-ui/icons';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -71,42 +72,17 @@ class App extends Component {
     const { classes } = this.props
     if (this.state.keycloak) {
       if (this.state.authenticated) return (
-        <div className="App">
+        <div className={classes.root}>
           <CssBaseline />
           <AppBar position="static">
-            <Toolbar>
-              <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                <MenuIcon />
-              </IconButton>
+          <Toolbar>
               <Typography variant="h6" className={classes.title}>
                 Notebook: {this.state.keycloak.tokenParsed.name}
               </Typography>
-              {/* 
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
-                  <Typography className={classes.heading}>JWT Token</Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography >{this.state.keycloak.token}</Typography>
-                </AccordionDetails>
-              </Accordion> 
-              */}
               <Button color="inherit" onClick={this.state.keycloak.logout}>Logout</Button>
             </Toolbar>
           </AppBar>
-          <List>
-            <ListItem button>
-              <ListItemIcon>
-                <NoteIcon />
-              </ListItemIcon>
-              <ListItemText primary="Chelsea Otakan" />
-            </ListItem>
-          </List>
-          <Container >
+          <Container>
             <ReactQuill theme="snow" value={this.state.keycloak.token} />
           </Container>
         </div>

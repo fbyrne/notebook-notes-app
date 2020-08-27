@@ -5,19 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Chrome",
+            "name": "Launch Chrome (k8s)",
+            "request": "launch",
+            "type": "pwa-chrome",
+            "url": "http://notebook-172-17-0-2.nip.io",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Launch Chrome (Local)",
             "request": "launch",
             "type": "pwa-chrome",
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}"
-        },
-
-    {
-        "name": "Attach to Chrome",
-        "port": 9222,
-        "request": "attach",
-        "type": "pwa-chrome",
-        "webRoot": "${workspaceFolder}"
-    }
+        }
     ]
 }

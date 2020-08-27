@@ -1,5 +1,8 @@
 # notebook-notes-app
 
+This project provides the react frontend for the notebook application.
+
+Currently this only prompts the user login and displays the JWT token.
 
 ## Build 
 

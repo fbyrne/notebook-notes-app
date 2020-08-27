@@ -3,15 +3,28 @@ kind: Config
 metadata:
   name: note-app
 
+build:
+  tagPolicy:
+    sha256: {}
+  artifacts:
+    - image: notebook/note-app
+      docker:
+        dockerfile: Dockerfile.dev
 profiles:
-  - name: dev
+  - name: production
     build:
+      tagPolicy:
+        gitCommit:
+          prefix: production
       artifacts:
         - image: notebook/note-app
           docker:
-            dockerfile: Dockerfile.dev
-  - name: prod
+            dockerfile: Dockerfile.prod
+  - name: staging
     build:
+      tagPolicy:
+        gitCommit:
+          prefix: staging
       artifacts:
         - image: notebook/note-app
           docker:
