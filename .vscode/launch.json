@@ -4,19 +4,22 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
         {
             "name": "Launch Chrome (k8s)",
             "request": "launch",
             "type": "pwa-chrome",
             "url": "http://notebook-172-17-0-2.nip.io",
-            "webRoot": "${workspaceFolder}"
+            "webRoot": "${workspaceFolder}",
         },
         {
             "name": "Launch Chrome (Local)",
             "request": "launch",
             "type": "pwa-chrome",
             "url": "http://localhost:3000",
-            "webRoot": "${workspaceFolder}"
+            "userDataDir": "${workspaceRoot}/.vscode/chrome",
+            "webRoot": "${workspaceFolder}",
+            "env": { "GATEWAY_DNS": "http://notebook-10-97-33-152.nip.io" }
         }
     ]
 }

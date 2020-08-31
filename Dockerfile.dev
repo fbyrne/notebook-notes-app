@@ -5,12 +5,18 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 ENV PORT 80
 
+# Required or the container will exit if there is no tty. 
+# See https://github.com/GoogleContainerTools/skaffold/issues/3882
+#     https://github.com/facebook/create-react-app/issues/8739
+ENV CI=true 
+
 COPY package.json ./
 COPY package-lock.json ./
 COPY public ./public
 COPY src ./src
-RUN npm ci
-RUN npm install
+RUN npm config set color false && \
+    npm ci && \
+    npm install
 
 EXPOSE 80
 CMD ["npm", "start"]

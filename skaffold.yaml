@@ -2,7 +2,6 @@ apiVersion: skaffold/v2beta6
 kind: Config
 metadata:
   name: note-app
-
 build:
   tagPolicy:
     sha256: {}
@@ -15,7 +14,7 @@ profiles:
     build:
       tagPolicy:
         gitCommit:
-          prefix: production
+          prefix: production-
       artifacts:
         - image: notebook/note-app
           docker:
@@ -24,7 +23,7 @@ profiles:
     build:
       tagPolicy:
         gitCommit:
-          prefix: staging
+          prefix: staging-
       artifacts:
         - image: notebook/note-app
           docker:

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+../notebook-deployment/istio-gateway notebook
+
+npm start "$@"

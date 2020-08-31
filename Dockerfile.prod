@@ -6,9 +6,11 @@ COPY package.json ./
 COPY package-lock.json ./
 COPY public ./public
 COPY src ./src
-RUN npm ci
-RUN npm install react-scripts@3.4.1 -g
-RUN npm run build
+
+RUN npm config set color false && \
+    npm ci && \
+    npm install react-scripts@3.4.3 -g && \
+    npm run build
 
 # production environment
 FROM nginx:stable-alpine

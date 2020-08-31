@@ -1,0 +1,3 @@
+#!/bin/sh
+
+skaffold build && kubectl -n notebook-dev rollout restart deployment/notes-app

@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+
 import './index.css';
 
+import { AuthenticationProvider } from './services/AuthenticationService';
+
+import InitialApp from './InitialApp';
+
 ReactDOM.render(
-  <App />,
+  <AuthenticationProvider>
+    <InitialApp />
+  </AuthenticationProvider>,
   document.getElementById('root')
 );
