@@ -12,19 +12,17 @@ build:
 profiles:
   - name: production
     build:
-      tagPolicy:
-        gitCommit:
-          prefix: production-
       artifacts:
         - image: notebook/note-app
           docker:
             dockerfile: Dockerfile.prod
+      tagPolicy:
+        gitCommit: {}
   - name: staging
     build:
-      tagPolicy:
-        gitCommit:
-          prefix: staging-
       artifacts:
         - image: notebook/note-app
           docker:
             dockerfile: Dockerfile.prod
+      tagPolicy:
+        gitCommit: {}
